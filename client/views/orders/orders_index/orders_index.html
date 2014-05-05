@@ -1,0 +1,44 @@
+<template name="OrdersIndex">
+	{{#if currentUser}}
+		{{#each currentOrder}}
+			<Legend>Ваш заказ на {{justPlaying}}</Legend>
+			{{> OrderForm}}
+		{{else}}
+			{{#if currentMenu}}
+				<Legend>Меню на {{justPlaying}}</Legend>
+				<p>Суп</p>
+				<ul>
+				{{#each currentMenu.soup}}
+					<li>{{name}} ({{price}} руб.)</li>
+				{{else}}
+					<li>В меню нет супа на этот день</li>
+				{{/each}}
+				</ul>
+				<p>Второе блюдо</p>
+				<ul>
+				{{#each currentMenu.main}}
+					<li>{{name}} ({{price}} руб.)</li>
+				{{else}}
+					<li>В меню нет второго блюда на этот день</li>
+				{{/each}}
+				</ul>
+				<p>Салат</p>
+				<ul>
+				{{#each currentMenu.salad}}
+					<li>{{name}} ({{price}} руб.)</li>
+				{{else}}
+					<li>В меню нет салата на этот день</li>
+				{{/each}}
+				</ul>
+			{{else}}
+				<Legend>Нет меню на {{justPlaying}}</Legend>
+			{{/if}}
+			<br/>
+			<a id="create_order" href="#" class="btn btn-primary" role="button">Создать заказ</a>
+		{{/each}}
+	{{else}}
+		<div class="alert alert-info">
+			<strong>Добро пожаловать!</strong> Авторизуйтесь чтобы сделать заказ.
+		</div>
+	{{/if}}
+</template>

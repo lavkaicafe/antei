@@ -1,8 +1,7 @@
 /*****************************************************************************/
-/* AnteiIndex Publish Functions
+/* OrdersIndex Publish Functions
 /*****************************************************************************/
 
-Meteor.publish('antei_index', function () {
-  // you can remove this if you return a cursor
-  this.ready();
+Meteor.publish('orders_index', function () {
+  return Orders.find({user_id: this.userId});
 });

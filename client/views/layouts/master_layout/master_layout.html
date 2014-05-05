@@ -1,4 +1,19 @@
 <template name="MasterLayout">
+<div class="navbar navbar-default" role="navigation">
+<div class="container">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Лавка и кафе: заказ обедов в офис</a>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      
+    </ul>
+  </div>
+</div>
+</div>
+<div class="container">
+  {{> loginButtons }}
+  <br/>
   {{> yield}}
-<p>test master layout</p>
+</div>
 </template>

@@ -1,0 +1,42 @@
+<template name="OrderForm">
+	<div id="save_alert" class="alert alert-success hidden">
+		Изменения сохранены.
+	</div>
+	<form class="form-horizontal" role="form">
+		<div class="form-group">
+			<label for="soup" class="control-label col-xs-2">Суп</label>
+			<div class="col-xs-10">
+				<select id="soup" class="form-control">
+					<option value="0">Не включать в заказ</option>
+				{{#each currentOrderOne.menu.soup}}
+					<option value="{{index}}">{{name}} ({{price}} руб.)</option>
+				{{/each}}
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="main" class="control-label col-xs-2">Второе</label>
+			<div class="col-xs-10">
+				<select id="main" class="form-control">
+					<option value="0">Не включать в заказ</option>
+				{{#each currentOrderOne.menu.main}}
+					<option value="{{index}}">{{name}} ({{price}} руб.)</option>
+				{{/each}}
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="salad" class="control-label col-xs-2">Салат</label>
+			<div class="col-xs-10">
+				<select id="salad" class="form-control">
+					<option value="0">Не включать в заказ</option>
+				{{#each currentOrderOne.menu.salad}}
+					<option value="{{index}}">{{name}} ({{price}} руб.)</option>
+				{{/each}}
+				</select>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary">Сохранить</button>
+		<a id="delete_order" href="#" class="btn btn-danger" role="button">Удалить заказ</a>
+	</form>
+</template>

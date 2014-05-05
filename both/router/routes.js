@@ -14,5 +14,5 @@ Router.map(function () {
     Example:
       this.route('home', {path: '/'});
   */
-  this.route('antei.index', {path: '/'});
+  this.route('orders.index', {path: '/'});
 });

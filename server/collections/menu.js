@@ -1,25 +1,25 @@
 /*
  * Add query methods like this:
- *  Antei.findPublic = function () {
- *    return Antei.find({is_public: true});
+ *  Menu.findPublic = function () {
+ *    return Menu.find({is_public: true});
  *  }
  */
 
-Antei.allow({
+Menu.allow({
   insert: function (userId, doc) {
-    return true;
+    return false;
   },
 
   update: function (userId, doc, fieldNames, modifier) {
-    return true;
+    return false;
   },
 
   remove: function (userId, doc) {
-    return true;
+    return false;
   }
 });
 
-Antei.deny({
+Menu.deny({
   insert: function (userId, doc) {
     return false;
   },
